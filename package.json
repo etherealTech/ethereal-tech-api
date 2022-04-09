@@ -14,7 +14,7 @@
     "start:prod": "node dist/main",
     "heroku-prebuild": "",
     "heroku-postbuild": "",
-    "heroku-clean": ""
+    "heroku-cleanup": ""
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
