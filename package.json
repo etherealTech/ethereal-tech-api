@@ -13,7 +13,8 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "heroku-prebuild": "",
-    "heroku-postbuild": ""
+    "heroku-postbuild": "",
+    "heroku-clean": ""
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
