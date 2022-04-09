@@ -1,0 +1,11 @@
+import { AppOptions } from 'firebase-admin';
+export declare const PORT: string | number;
+export declare const APP_SECRET: string;
+export declare const FIREBASE_CREDENTIAL: string;
+export declare const FIREBASE_CONFIG: AppOptions;
+export declare const PG_HOST: string;
+export declare const PG_PORT: number;
+export declare const PG_USERNAME: string;
+export declare const PG_PASSWORD: string;
+export declare const PG_DATABASE: string;
+export declare const DATABASE_URL: string;

@@ -1,0 +1,1 @@
+web: sh -c "$(cat bin/get-credential.sh)" && node dist/main.js

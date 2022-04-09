@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/firebase@8.3.3/firebase-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/firebase@8.3.3/firebase-auth.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: 'AIzaSyBe7uSG9hFjXn9Q7wdRj7WsLYErI2rL7Gg',
+        authDomain: 'ethereal-tech.firebaseapp.com',
+        databaseURL:
+          'https://ethereal-tech-default-rtdb.asia-southeast1.firebasedatabase.app',
+        projectId: 'ethereal-tech',
+        storageBucket: 'ethereal-tech.appspot.com',
+        messagingSenderId: '733927971997',
+        appId: '1:733927971997:web:8d470c5ec2d89e3828c874',
+        measurementId: 'G-5FBVF0Z2L8',
+      };
+      const app = firebase.initializeApp(firebaseConfig);
+    </script>
+  </head>
+  <body>
+    <textarea id="token" readonly style="width: 100%; height: 40vh"></textarea>
+    <button id="sign-in">Sign In</button>
+
+    <script>
+      let loggedIn = false;
+      let output = document.getElementById('token');
+      let signInBtn = document.getElementById('sign-in');
+
+      output.addEventListener('click', () => {
+        output.select();
+        document.execCommand('copy');
+        navigator.clipboard.writeText(output.value);
+      });
+
+      signInBtn.addEventListener('click', () =>
+        loggedIn ? app.auth().signOut() : signIn(),
+      );
+
+      app.auth().onAuthStateChanged(async (user) => {
+        if (user) {
+          output.value = await user.getIdToken();
+          signInBtn.innerText = 'Sign Out';
+        } else {
+          output.value = '';
+        }
+      });
+
+      function signIn() {
+        app
+          .auth()
+          .signInWithEmailAndPassword('admin@example.com', 'password')
+          .catch(console.error.bind(console));
+      }
+    </script>
+  </body>
+</html>
