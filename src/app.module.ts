@@ -31,6 +31,9 @@ const dbConfigs = DATABASE_URL
     TypeOrmModule.forRoot({
       type: 'postgres',
       ...dbConfigs,
+      extra: {
+        ssl: false,
+      },
       synchronize: true,
       entities: [Configs],
     }),
