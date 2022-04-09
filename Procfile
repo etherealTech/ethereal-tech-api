@@ -1,1 +1,1 @@
-web: sh -c "$(cat bin/get-credential.sh)" && npx -p @nestjs/cli nest start
+web: sh -c "$(cat bin/get-credential.sh)" && nest start
