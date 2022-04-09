@@ -28,3 +28,5 @@ export const PG_USERNAME = env.PG_USERNAME || 'postgres';
 export const PG_PASSWORD = env.PG_PASSWORD || 'postgres';
 
 export const PG_DATABASE = env.PG_DATABASE || 'postgres';
+
+export const DATABASE_URL = env.DATABASE_URL;
